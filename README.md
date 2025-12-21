@@ -30,5 +30,5 @@ You can view the live version of this portfolio at:
 ## Contact
 
 - LinkedIn: (www.linkedin.com/in/modest-luis-boquera-26a1a6256)  
-- GitHub: (https://github.com/twelfetitan))  
+- GitHub: (https://github.com/twelfetitan)
 - Email: (modestluis@gmail.com)
