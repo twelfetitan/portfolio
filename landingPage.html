@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modest Luis | Desarrollador de Aplicaciones Multiplataforma</title>
+
+  <!-- SEO básico -->
+  <meta name="description" content="Portfolio de Modest Luis, desarrollador de aplicaciones multiplataforma especializado en backend, apps móviles y soluciones empresariales.">
+  <meta name="author" content="Modest Luis">
+
+  <!-- Open Graph (para compartir en LinkedIn, etc.) -->
+  <meta property="og:title" content="Modest Luis | Desarrollador DAM">
+  <meta property="og:description" content="Desarrollador de aplicaciones multiplataforma especializado en backend, apps móviles y soluciones empresariales.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tudominio.com">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80">
+
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#050510;
+      --bg-2:#111827;
+      --card:#111827;
+      --muted:#9ca3af;
+      --accent:#6366f1;
+      --accent-2:#4f46e5;
+      --accent-soft:rgba(99,102,241,0.12);
+      --border:#1f2937;
+      --shadow:0 18px 45px rgba(0,0,0,0.55);
+      --radius-lg:18px;
+      --radius-md:12px;
+      font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+
+    body{
+      background:radial-gradient(circle at top left,#111827 0, #02010a 55%, #000 100%);
+      color:white;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    a{color:inherit}
+
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      padding:28px 20px 60px;
+    }
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      padding:8px 0 10px;
+      position:sticky;
+      top:0;
+      z-index:20;
+      background:linear-gradient(to bottom,rgba(5,5,16,0.98),rgba(5,5,16,0.92),transparent);
+      backdrop-filter:blur(18px);
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .brand-mark{
+      width:32px;
+      height:32px;
+      border-radius:999px;
+      background:radial-gradient(circle at 30% 0%,#a5b4fc,#6366f1 35%,#1d2437 75%);
+      box-shadow:0 0 0 1px rgba(148,163,184,0.5),0 0 25px rgba(79,70,229,0.7);
+    }
+
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+    }
+    .brand-name{
+      font-weight:700;
+      letter-spacing:0.04em;
+      font-size:0.95rem;
+      text-transform:uppercase;
+    }
+    .brand-role{
+      font-size:0.78rem;
+      color:var(--muted);
+    }
+
+    nav{
+      display:flex;
+      gap:18px;
+      font-size:0.9rem;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:500;
+      position:relative;
+      padding:4px 0;
+    }
+
+    nav a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-2px;
+      width:0;
+      height:2px;
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      border-radius:999px;
+      transition:width .22s ease-out;
+    }
+
+    nav a:hover,
+    nav a:focus-visible{
+      color:white;
+      outline:none;
+    }
+
+    nav a:hover::after,
+    nav a:focus-visible::after{
+      width:100%;
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);
+      align-items:center;
+      gap:36px;
+      margin-top:36px;
+    }
+
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr;margin-top:26px}
+    }
+
+    h1{
+      font-size:2.6rem;
+      line-height:1.1;
+      margin-bottom:10px;
+      font-weight:800;
+    }
+
+    @media(max-width:600px){
+      h1{font-size:2.2rem}
+    }
+
+    .hero-eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:4px 10px;
+      border-radius:999px;
+      background:var(--accent-soft);
+      border:1px solid rgba(129,140,248,0.35);
+      color:#c7d2fe;
+      font-size:0.8rem;
+      font-weight:500;
+      margin-bottom:10px;
+    }
+
+    .hero-eyebrow-dot{
+      width:7px;
+      height:7px;
+      border-radius:999px;
+      background:#22c55e;
+      box-shadow:0 0 0 3px rgba(34,197,94,0.32);
+    }
+
+    .lead{
+      color:var(--muted);
+      font-size:1rem;
+      margin-top:12px;
+      max-width:540px;
+    }
+
+    .hero-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:18px;
+    }
+
+    .tag{
+      padding:4px 10px;
+      border-radius:999px;
+      background:#020617;
+      border:1px solid var(--border);
+      font-size:0.78rem;
+      color:#e5e7eb;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:22px;
+    }
+
+    .btn-primary{
+      background:linear-gradient(120deg,var(--accent),var(--accent-2));
+      color:white;
+      border:0;
+      padding:12px 20px;
+      border-radius:999px;
+      font-weight:600;
+      cursor:pointer;
+      font-size:0.95rem;
+      box-shadow:0 14px 40px rgba(79,70,229,0.65);
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      transition:transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-1px);
+      box-shadow:0 18px 55px rgba(79,70,229,0.8);
+      opacity:0.96;
+    }
+
+    .btn-primary:focus-visible{
+      outline:2px solid #c7d2fe;
+      outline-offset:2px;
+    }
+
+    .btn-secondary{
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(15,23,42,0.7);
+      padding:11px 18px;
+      font-size:0.9rem;
+      color:var(--muted);
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      cursor:pointer;
+      transition:background .18s ease, color .18s ease, border-color .18s ease;
+      text-decoration:none;
+    }
+
+    .btn-secondary:hover,
+    .btn-secondary:focus-visible{
+      background:#020617;
+      color:#e5e7eb;
+      border-color:#4b5563;
+      outline:none;
+    }
+
+    .hero-media{
+      position:relative;
+    }
+
+    .hero-card{
+      border-radius:var(--radius-lg);
+      overflow:hidden;
+      background:radial-gradient(circle at top left,#1f2937,#020617 55%,#000 100%);
+      padding:14px 14px 12px;
+      border:1px solid rgba(55,65,81,0.9);
+      box-shadow:var(--shadow);
+    }
+
+    .hero-card img{
+      border-radius:14px;
+      width:100%;
+      height:260px;
+      object-fit:cover;
+      display:block;
+    }
+
+    .hero-pill{
+      position:absolute;
+      bottom:14px;
+      left:20px;
+      padding:8px 11px;
+      border-radius:14px;
+      background:rgba(15,23,42,0.92);
+      border:1px solid rgba(148,163,184,0.7);
+      backdrop-filter:blur(18px);
+      font-size:0.78rem;
+      color:#e5e7eb;
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+      max-width:220px;
+    }
+
+    .hero-pill-title{
+      font-weight:600;
+    }
+
+    .hero-pill-sub{
+      color:var(--muted);
+      font-size:0.75rem;
+    }
+
+    main{
+      margin-top:40px;
+    }
+
+    section{
+      margin-top:60px;
+      opacity:0;
+      transform:translateY(18px);
+      transition:opacity .6s ease-out, transform .6s ease-out;
+    }
+    section.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    h2{
+      font-size:1.65rem;
+      margin-bottom:10px;
+      font-weight:700;
+    }
+
+    .section-subtitle{
+      color:var(--muted);
+      font-size:0.95rem;
+      margin-bottom:18px;
+    }
+
+    .card{
+      background:linear-gradient(135deg,#020617,#020617 55%,#020617);
+      padding:22px 22px 20px;
+      border-radius:var(--radius-lg);
+      box-shadow:var(--shadow);
+      border:1px solid var(--border);
+      transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+      box-shadow:0 22px 60px rgba(0,0,0,0.9);
+      border-color:rgba(148,163,184,0.7);
+    }
+
+    .card + .card{
+      margin-top:14px;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:22px;
+    }
+
+    @media(max-width:900px){
+      .grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    @media(max-width:640px){
+      .grid-3{grid-template-columns:1fr}
+    }
+
+    .muted{
+      color:var(--muted);
+      font-size:0.9rem;
+    }
+
+    .links a{
+      color:#a5b4fc;
+      text-decoration:none;
+      font-weight:500;
+    }
+
+    .links a:hover,
+    .links a:focus-visible{
+      text-decoration:underline;
+      outline:none;
+    }
+
+    .project-card img{
+      border-radius:12px;
+      width:100%;
+      height:170px;
+      object-fit:cover;
+    }
+
+    .project-title{
+      margin-top:12px;
+      font-size:1.05rem;
+      font-weight:600;
+    }
+
+    .project-tech{
+      margin-top:10px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+    }
+
+    .badge{
+      font-size:0.75rem;
+      padding:3px 8px;
+      border-radius:999px;
+      background:rgba(15,23,42,0.9);
+      border:1px solid var(--border);
+      color:#d1d5db;
+    }
+
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
+    }
+
+    @media(max-width:800px){
+      .skills-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    @media(max-width:540px){
+      .skills-grid{grid-template-columns:1fr}
+    }
+
+    .skill-title{
+      font-weight:600;
+      margin-bottom:8px;
+    }
+
+    .skill-list{
+      color:var(--muted);
+      font-size:0.9rem;
+    }
+
+    .skill-list span{
+      display:inline-block;
+      margin-right:8px;
+      margin-bottom:4px;
+    }
+
+    .contact-list p{
+      margin-bottom:6px;
+    }
+
+    .contact-list strong{
+      font-weight:600;
+    }
+
+    footer{
+      text-align:center;
+      margin-top:40px;
+      color:var(--muted);
+      font-size:0.9rem;
+      padding-top:20px;
+      border-top:1px solid #111827;
+    }
+
+    .sr-only{
+      position:absolute;
+      width:1px;
+      height:1px;
+      padding:0;
+      margin:-1px;
+      overflow:hidden;
+      clip:rect(0,0,0,0);
+      border:0;
+    }
+  </style>
+</head>
+<body>
+  <a class="sr-only" href="#main">Saltar al contenido principal</a>
+
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"></div>
+        <div class="brand-text">
+          <span class="brand-name">Modest Luis</span>
+          <span class="brand-role">Desarrollador de Aplicaciones Multiplataforma</span>
+        </div>
+      </div>
+
+      <nav aria-label="Navegación principal">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+      <div>
+        <div class="hero-eyebrow">
+          <span class="hero-eyebrow-dot"></span>
+          <span>Disponible para prácticas y junior</span>
+        </div>
+
+        <h1>Desarrollo soluciones multiplataforma con foco en calidad y mantenimiento</h1>
+
+        <p class="lead">
+          Soy Modest Luis, desarrollador formado en DAM especializado en backend, apps móviles y aplicaciones de escritorio.
+          Me centro en escribir código claro, seguro y escalable, orientado a negocio.
+        </p>
+
+        <div class="hero-tags">
+          <span class="tag">Backend Java & Kotlin</span>
+          <span class="tag">Apps móviles</span>
+          <span class="tag">APIs REST</span>
+          <span class="tag">Bases de datos</span>
+        </div>
+
+        <div class="hero-actions">
+          <button
+            class="btn-primary"
+            type="button"
+            onclick="document.getElementById('proyectos').scrollIntoView({behavior:'smooth'})"
+          >
+            Ver proyectos
+          </button>
+
+          <a
+            class="btn-secondary"
+            href="#contacto"
+          >
+            Descargar CV / Contacto
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-media" aria-hidden="true">
+        <div class="hero-card">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80" alt="">
+        </div>
+        <div class="hero-pill">
+          <span class="hero-pill-title">+X proyectos académicos y personales</span>
+          <span class="hero-pill-sub">APIs, apps móviles, dashboards y automatizaciones para casos reales.</span>
+        </div>
+      </div>
+    </section>
+
+    <main id="main">
+      <section id="sobre-mi">
+        <h2>Sobre mí</h2>
+        <p class="section-subtitle">Perfil técnico orientado a resultados, con ganas de seguir creciendo en equipos de desarrollo.</p>
+
+        <div class="card">
+          <p>
+            Soy un desarrollador de aplicaciones multiplataforma con formación en DAM y experiencia en proyectos académicos y personales que simulan entornos reales.
+            Me gusta trabajar con buenas prácticas, pruebas y control de versiones para entregar software fiable.
+          </p>
+          <br>
+          <p>
+            Busco incorporarme a un equipo donde pueda aportar en backend y desarrollo de aplicaciones mientras continúo aprendiendo arquitectura, patrones de diseño y automatización de procesos.
+          </p>
+          <br>
+          <p class="links">
+            GitHub:
+            <a href="https://github.com/micuenta" target="_blank" rel="noopener noreferrer">
+              github.com/micuenta
+            </a>
+          </p>
+          <p class="links">
+            LinkedIn:
+            <a href="https://linkedin.com/in/miperfil" target="_blank" rel="noopener noreferrer">
+              linkedin.com/in/miperfil
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <section id="experiencia">
+        <h2>Experiencia</h2>
+        <p class="section-subtitle">Proyectos que consolidan las bases de desarrollo profesional.</p>
+
+        <div class="card">
+          <p><strong>Proyecto final DAM</strong> · Desarrollo de aplicación completa</p>
+          <p class="muted">
+            Diseño y desarrollo de una solución multiplataforma que integra backend, base de datos, autenticación y una interfaz usable.
+            Documentación técnica y uso de Git para control de versiones.
+          </p>
+          <br>
+          <p><strong>Proyectos freelance / personales</strong></p>
+          <p class="muted">
+            Pequeñas aplicaciones para automatizar tareas, herramientas internas y APIs REST sencillas para clientes y contactos cercanos,
+            desde la definición del alcance hasta la entrega funcional.
+          </p>
+        </div>
+      </section>
+
+      <section id="proyectos">
+        <h2>Proyectos destacados</h2>
+        <p class="section-subtitle">Algunos proyectos seleccionados que representan mi forma de trabajar.</p>
+
+        <div class="grid-3" style="margin-top:16px">
+          <article class="card project-card">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Captura de un sistema de gestión de tareas.">
+            <h3 class="project-title">Sistema de Gestión de Tareas</h3>
+            <p class="muted">
+              Aplicación multiplataforma con Kotlin y SQLite para gestionar tareas con notificaciones, etiquetas y sincronización offline.
+            </p>
+            <div class="project-tech">
+              <span class="badge">Kotlin</span>
+              <span class="badge">SQLite</span>
+              <span class="badge">MVVM</span>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="Captura de API para eCommerce.">
+            <h3 class="project-title">API REST para eCommerce</h3>
+            <p class="muted">
+              Backend con Java y Spring Boot para gestionar usuarios, roles, productos y pedidos, con autenticación basada en JWT.
+            </p>
+            <div class="project-tech">
+              <span class="badge">Java</span>
+              <span class="badge">Spring Boot</span>
+              <span class="badge">JWT</span>
+              <span class="badge">REST</span>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80" alt="Captura de aplicación de escritorio.">
+            <h3 class="project-title">Aplicación de Escritorio para Inventario</h3>
+            <p class="muted">
+              Software con JavaFX para gestión de stock, estadísticas y generación de informes PDF, conectado a base de datos relacional.
+            </p>
+            <div class="project-tech">
+              <span class="badge">JavaFX</span>
+              <span class="badge">SQL</span>
+              <span class="badge">Informes PDF</span>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <img src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=800&q=80" alt="Captura de dashboard empresarial.">
+            <h3 class="project-title">Dashboard Empresarial</h3>
+            <p class="muted">
+              Dashboard con JavaScript y Node.js para visualizar métricas clave en tiempo real mediante gráficos y tablas dinámicas.
+            </p>
+            <div class="project-tech">
+              <span class="badge">Node.js</span>
+              <span class="badge">Express</span>
+              <span class="badge">Charts</span>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <img src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&w=800&q=80" alt="Captura de chatbot con IA.">
+            <h3 class="project-title">Chatbot con IA</h3>
+            <p class="muted">
+              Chatbot en Python usando técnicas de NLP para responder a preguntas frecuentes y conectarse a APIs externas.
+            </p>
+            <div class="project-tech">
+              <span class="badge">Python</span>
+              <span class="badge">NLP</span>
+              <span class="badge">APIs</span>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=800&q=80" alt="Captura de app deportiva.">
+            <h3 class="project-title">App de Gestión Deportiva</h3>
+            <p class="muted">
+              Aplicación móvil para clubes con gestión de jugadores, estadísticas y sincronización de datos en la nube.
+            </p>
+            <div class="project-tech">
+              <span class="badge">Android</span>
+              <span class="badge">Kotlin</span>
+              <span class="badge">Firebase</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="habilidades">
+        <h2>Habilidades</h2>
+        <p class="section-subtitle">Tecnologías con las que trabajo en el día a día de mis proyectos.</p>
+
+        <div class="skills-grid">
+          <div class="card">
+            <p class="skill-title">Lenguajes</p>
+            <p class="skill-list">
+              <span>Java</span>
+              <span>Kotlin</span>
+              <span>JavaScript</span>
+              <span>Python</span>
+              <span>SQL</span>
+            </p>
+          </div>
+
+          <div class="card">
+            <p class="skill-title">Frameworks & plataformas</p>
+            <p class="skill-list">
+              <span>Spring Boot</span>
+              <span>JavaFX</span>
+              <span>Node.js</span>
+              <span>Express</span>
+              <span>Firebase</span>
+            </p>
+          </div>
+
+          <div class="card">
+            <p class="skill-title">Herramientas & otros</p>
+            <p class="skill-list">
+              <span>Git</span>
+              <span>Docker</span>
+              <span>Postman</span>
+              <span>Linux</span>
+              <span>Figma</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contacto">
+        <h2>Contacto</h2>
+        <p class="section-subtitle">¿Te interesa mi perfil? Hablemos.</p>
+
+        <div class="card contact-list" style="margin-top:16px">
+          <p>
+            Correo:
+            <strong><a href="mailto:miemail@example.com">miemail@example.com</a></strong>
+          </p>
+          <p class="links">
+            LinkedIn:
+            <a href="https://linkedin.com/in/miperfil" target="_blank" rel="noopener noreferrer">
+              linkedin.com/in/miperfil
+            </a>
+          </p>
+          <p class="links">
+            GitHub:
+            <a href="https://github.com/micuenta" target="_blank" rel="noopener noreferrer">
+              github.com/micuenta
+            </a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © 2025 — Modest Luis · Portfolio de desarrollo de aplicaciones multiplataforma
+    </footer>
+  </div>
+
+  <script>
+    const sections = document.querySelectorAll('main section, .hero');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold:0.18 });
+
+    sections.forEach(sec => observer.observe(sec));
+  </script>
+</body>
+</html>
