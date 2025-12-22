@@ -457,3 +457,21 @@ footer{
   clip:rect(0,0,0,0);
   border:0;
 }
+
+html, body{
+  max-width:100%;
+  overflow-x:hidden;
+}
+
+/* Asegurar que nada se salga en móvil */
+img, .container, header, .hero, .grid-3, .skills-grid{
+  max-width:100%;
+}
+
+/* Nav que se adapte en pantallas estrechas */
+@media(max-width:600px){
+  nav{
+    flex-wrap:wrap;
+    justify-content:flex-end;
+  }
+}
