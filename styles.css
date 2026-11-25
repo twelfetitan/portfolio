@@ -22,6 +22,11 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 
+img{
+  display:block;
+  max-width:100%;
+}
+
 a{color:inherit}
 
 .container{
@@ -48,67 +53,6 @@ header{
   align-items:center;
   gap:10px;
 }
-
-.brand-mark{
-  width:32px;
-  height:32px;
-  border-radius:999px;
-  background:radial-gradient(circle at 30% 0%,#a5b4fc,#6366f1 35%,#1d2437 75%);
-  box-shadow:0 0 0 1px rgba(148,163,184,0.5),0 0 25px rgba(79,70,229,0.7);
-}
-
-.brand-text{
-  display:flex;
-  flex-direction:column;
-}
-.brand-name{
-  font-weight:700;
-  letter-spacing:0.04em;
-  font-size:0.95rem;
-  text-transform:uppercase;
-}
-.brand-role{
-  font-size:0.78rem;
-  color:var(--muted);
-}
-
-nav{
-  display:flex;
-  gap:18px;
-  font-size:0.9rem;
-}
-
-nav a{
-  text-decoration:none;
-  color:var(--muted);
-  font-weight:500;
-  position:relative;
-  padding:4px 0;
-}
-
-nav a::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-2px;
-  width:0;
-  height:2px;
-  background:linear-gradient(90deg,var(--accent),var(--accent-2));
-  border-radius:999px;
-  transition:width .22s ease-out;
-}
-
-nav a:hover,
-nav a:focus-visible{
-  color:white;
-  outline:none;
-}
-
-nav a:hover::after,
-nav a:focus-visible::after{
-  width:100%;
-}
-
 
 .brand-icon{
   width:32px;
@@ -142,25 +86,12 @@ nav a:focus-visible::after{
 }
 
 
-.brand-text{
-  display:flex;
-  flex-direction:column;
-}
-.brand-name{
-  font-weight:700;
-  letter-spacing:0.04em;
-  font-size:0.95rem;
-  text-transform:uppercase;
-}
-.brand-role{
-  font-size:0.78rem;
-  color:var(--muted);
-}
-
 nav{
   display:flex;
   gap:18px;
   font-size:0.9rem;
+  flex-wrap:nowrap;
+  align-items:center;
 }
 
 nav a{
@@ -337,9 +268,10 @@ h1{
 .hero-card img{
   border-radius:14px;
   width:100%;
-  height:260px;
+  aspect-ratio:16 / 10;
+  height:auto;
   object-fit:cover;
-  display:block;
+  object-position:center;
 }
 
 .hero-pill{
@@ -425,8 +357,13 @@ h2{
   border-color:rgba(148,163,184,0.7);
 }
 
-.card + .card{
-  margin-top:14px;
+.card-spacing{
+  margin-top:12px;
+}
+
+.project-grid,
+.contact-list{
+  margin-top:16px;
 }
 
 .grid-3{
@@ -462,8 +399,21 @@ h2{
 .project-card img{
   border-radius:12px;
   width:100%;
-  height:170px;
+  aspect-ratio:16 / 10;
+  height:auto;
   object-fit:cover;
+  object-position:center;
+}
+
+.project-card{
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+}
+
+.project-card .project-tech{
+  margin-top:auto;
+  padding-top:10px;
 }
 
 .project-title{
@@ -555,11 +505,26 @@ img, .container, header, .hero, .grid-3, .skills-grid{
   max-width:100%;
 }
 
-/* Nav que se adapte en pantallas estrechas */
-@media(max-width:600px){
-  nav{
+@media(max-width:760px){
+  header{
     flex-wrap:wrap;
-    justify-content:flex-end;
+  }
+
+  nav{
+    width:100%;
+    justify-content:flex-start;
+    gap:14px;
+    overflow-x:auto;
+    padding:4px 0 8px;
+    scrollbar-width:none;
+  }
+
+  nav::-webkit-scrollbar{
+    display:none;
+  }
+
+  nav a{
+    flex:0 0 auto;
   }
 }
 

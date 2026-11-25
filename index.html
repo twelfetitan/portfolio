@@ -74,22 +74,13 @@
           <span class="tag">Bases de datos</span>
         </div>
 
-        <div class="hero-actions">
-          <button class="btn-primary" type="button"
-            onclick="document.getElementById('proyectos').scrollIntoView({behavior:'smooth'})">
-            Ver proyectos
-          </button>
-
-          <a class="btn-secondary" href="CV-Modest-Luis-Boquera.pdf" download="CV-Modest-Luis-Boquera.pdf">
-            Descargar CV / Contacto
-          </a>
-        </div>
       </div>
 
       <div class="hero-media" aria-hidden="true">
         <div class="hero-card">
           <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80"
-            alt="">
+            alt="Espacio de trabajo con portátiles y herramientas de desarrollo"
+            width="900" height="563" fetchpriority="high" decoding="async">
         </div>
         <div class="hero-pill">
           <span class="hero-pill-title">Proyectos académicos y personales</span>
@@ -99,56 +90,87 @@
     </section>
 
     <main id="main">
-      <section id="sobre-mi">
-        <h2>Sobre mí</h2>
-        <p class="section-subtitle">Perfil técnico orientado a resultados, con ganas de seguir creciendo en equipos de
-          desarrollo.</p>
+<section id="sobre-mi">
+  <h2>Sobre mí</h2>
+  <p class="section-subtitle">
+    Desarrollador orientado a construir aplicaciones web útiles, mantenibles y bien probadas.
+  </p>
 
-        <div class="card">
-          <p>
-            Soy un desarrollador de aplicaciones multiplataforma con formación en DAM y experiencia en proyectos
-            académicos y personales que simulan entornos reales.
-            Me gusta trabajar con buenas prácticas, pruebas y control de versiones para entregar software fiable.
-          </p>
-          <br>
-          <p>
-            Busco incorporarme a un equipo donde pueda aportar en backend y desarrollo de aplicaciones mientras continúo
-            aprendiendo arquitectura, patrones de diseño y automatización de procesos.
-          </p>
-          <br>
-          <p class="links">
-            GitHub:
-            <a href="https://github.com/twelfetitan" target="_blank" rel="noopener noreferrer">
-              twelfetitan
-            </a>
-          </p>
-          <p class="links">
-            LinkedIn:
-            <a href="https://www.linkedin.com/in/modest-luis-boquera-26a1a6256/" target="_blank"
-              rel="noopener noreferrer">
-              Modest Luis
-            </a>
-          </p>
-        </div>
-      </section>
+  <div class="card">
+    <p>
+      Soy Modest Luis, desarrollador de aplicaciones multiplataforma formado en DAM.
+      Me especializo en el desarrollo de aplicaciones web con Python y Django en el backend,
+      Angular y TypeScript en el frontend, y APIs REST orientadas a las necesidades del negocio.
+    </p>
+
+    <p class="card-spacing">
+      Me interesa entender cómo funcionan los sistemas de principio a fin: desde la lógica
+      del backend y las bases de datos hasta la interfaz, las integraciones y las pruebas
+      automatizadas. Trabajo con PostgreSQL, Redis, Docker y herramientas de testing para
+      desarrollar y depurar software de forma más fiable.
+    </p>
+
+    <p class="card-spacing">
+      Busco seguir creciendo en un equipo de desarrollo donde pueda aportar en backend,
+      frontend y automatización de procesos, mientras profundizo en arquitectura, patrones
+      de diseño y buenas prácticas.
+    </p>
+
+    <p class="links card-spacing">
+      GitHub:
+      <a href="https://github.com/twelfetitan" target="_blank" rel="noopener noreferrer">
+        twelfetitan
+      </a>
+    </p>
+
+    <p class="links">
+      LinkedIn:
+      <a href="https://www.linkedin.com/in/modest-luis-boquera-26a1a6256/" target="_blank"
+        rel="noopener noreferrer">
+        Modest Luis
+      </a>
+    </p>
+  </div>
+</section>
 
       <section id="experiencia">
         <h2>Experiencia</h2>
-        <p class="section-subtitle">Proyectos que consolidan las bases de desarrollo profesional.</p>
+        <p class="section-subtitle">
+          Desarrollo de aplicaciones web, APIs y soluciones empresariales.
+        </p>
 
         <div class="card">
-          <p><strong>Proyecto final DAM</strong> · Desarrollo de aplicación completa</p>
+          <p><strong>Desarrollo de aplicaciones web B2B</strong></p>
           <p class="muted">
-            Diseño y desarrollo de una solución multiplataforma que integra backend, base de datos, autenticación y una
-            interfaz usable.
-            Documentación técnica y uso de Git para control de versiones.
+            Participación en el desarrollo y mantenimiento de aplicaciones web empresariales
+            con backend en Python y Django, frontend en Angular e integraciones entre
+            microservicios.
           </p>
-          <br>
-          <p><strong>Proyectos freelance / personales</strong></p>
+
+          <p class="card-spacing">
+            <strong>Backend y APIs REST</strong>
+          </p>
           <p class="muted">
-            Pequeñas aplicaciones para automatizar tareas, herramientas internas y APIs REST sencillas para clientes y
-            contactos cercanos,
-            desde la definición del alcance hasta la entrega funcional.
+            Desarrollo de endpoints y lógica de negocio con Django y Django REST Framework,
+            trabajando con PostgreSQL, Redis y tareas asíncronas mediante Celery.
+          </p>
+
+          <p class="card-spacing">
+            <strong>Frontend y pruebas automatizadas</strong>
+          </p>
+          <p class="muted">
+            Desarrollo y depuración de interfaces en Angular, además de pruebas end-to-end
+            con Playwright y pytest para validar flujos de usuario y comportamientos de la
+            aplicación.
+          </p>
+
+          <p class="card-spacing">
+            <strong>Entornos Docker y depuración</strong>
+          </p>
+          <p class="muted">
+            Uso de Docker y Docker Compose para levantar servicios locales, ejecutar
+            migraciones, depurar workers en segundo plano y reproducir incidencias en un
+            entorno controlado.
           </p>
         </div>
       </section>
@@ -157,10 +179,10 @@
         <h2>Proyectos destacados</h2>
         <p class="section-subtitle">Algunos proyectos seleccionados que representan mi forma de trabajar.</p>
 
-        <div class="grid-3" style="margin-top:16px">
+        <div class="grid-3 project-grid">
           <!-- PROYECTO 1: Ollama Chatbot -->
           <article class="card project-card">
-            <img src="img/ollama.jpg" alt="Ollama Chatbot">
+            <img src="img/ollama.jpg" alt="Ollama Chatbot" loading="lazy" decoding="async">
             <h3 class="project-title">
               <a href="https://github.com/twelfetitan/ollama-chatbot" target="_blank" rel="noopener noreferrer">
                 Ollama Chatbot
@@ -178,7 +200,7 @@
 
           <!-- PROYECTO 2: Fruit-Shop -->
           <article class="card project-card">
-            <img src="img/fruiShop.png" alt="Fruit-Shop">
+            <img src="img/fruiShop.png" alt="Fruit-Shop" loading="lazy" decoding="async">
             <h3 class="project-title">
               <a href="https://github.com/twelfetitan/Fruit-Shop" target="_blank" rel="noopener noreferrer">
                 Fruit-Shop
@@ -196,7 +218,7 @@
 
           <!-- PROYECTO 3: FNCV Odoo -->
           <article class="card project-card">
-            <img src="img/fncvOdoo.png" alt="FNCV - Gestión de Natación en Odoo">
+            <img src="img/fncvOdoo.png" alt="FNCV - Gestión de Natación en Odoo" loading="lazy" decoding="async">
             <h3 class="project-title">
               <a href="https://github.com/twelfetitan/projecteSG_fnvc" target="_blank" rel="noopener noreferrer">
                 FNCV - Gestión de Natación (Odoo)
@@ -212,121 +234,126 @@
             </div>
           </article>
         
+          <!-- PROYECTO 4: Iron Gym -->
+          <article class="card project-card">
+            <img src="img/iron.png" alt="Iron Gym App" loading="lazy" decoding="async">
+            <h3 class="project-title">
+              <a href="https://github.com/twelfetitan/Iron" target="_blank" rel="noopener noreferrer">
+                Iron Gym App
+              </a>
+            </h3>
+            <p class="muted">
+              App de gimnasio para planificar rutinas, registrar entrenamientos y seguir tu progreso y pulsaciones con IA.
+            </p>
+            <div class="project-tech">
+              <span class="badge">React Native</span>
+              <span class="badge">TypeScript</span>
+              <span class="badge">SQLite</span>
+            </div>
+          </article>
 
-      <article class="card project-card">
-        <img src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=800&q=80"
-          alt="Captura de dashboard empresarial.">
-        <h3 class="project-title">Dashboard Empresarial</h3>
-        <p class="muted">
-          Dashboard con JavaScript y Node.js para visualizar métricas clave en tiempo real mediante gráficos y
-          tablas dinámicas.
-        </p>
-        <div class="project-tech">
-          <span class="badge">Node.js</span>
-          <span class="badge">Express</span>
-          <span class="badge">Charts</span>
+          <!-- PROYECTO 5: jronal -->
+          <article class="card project-card">
+            <img src="img/jornal.png" alt="Jornal App" loading="lazy" decoding="async">
+            <h3 class="project-title">
+              <a href="https://github.com/twelfetitan/jornalr" target="_blank" rel="noopener noreferrer">
+                Jornal
+              </a>
+            </h3>
+            <p class="muted">
+              Aplicacion para registrar y gestionar el trabajo diario.
+            </p>
+            <div class="project-tech">
+              <span class="badge">Flutter</span>
+              <span class="badge">Dart</span>
+              <span class="badge">Andoid Studio</span>
+            </div>
+          </article>
+
+          <!-- PROYECTO 6: ??? -->
+          <article class="card project-card">
+            <img src="img/under-construction.svg"
+              alt="Proyecto en construcción"
+              width="800" height="500" loading="lazy" decoding="async">
+            <h3 class="project-title">Nuevo proyecto</h3>
+            <p class="muted">
+              Próximamente habrá un nuevo proyecto por aquí. Todavía está en construcción.
+            </p>
+            <div class="project-tech">
+              <span class="badge">En desarrollo</span>
+              <span class="badge">Próximamente</span>
+            </div>
+          </article>
         </div>
-      </article>
+      </section>
 
-      <article class="card project-card">
-        <img src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&w=800&q=80"
-          alt="Captura de chatbot con IA.">
-        <h3 class="project-title">Chatbot con IA</h3>
-        <p class="muted">
-          Chatbot en Python usando técnicas de NLP para responder a preguntas frecuentes y conectarse a APIs
-          externas.
-        </p>
-        <div class="project-tech">
-          <span class="badge">Python</span>
-          <span class="badge">NLP</span>
-          <span class="badge">APIs</span>
+      <section id="habilidades">
+        <h2>Habilidades</h2>
+        <p class="section-subtitle">Tecnologías con las que trabajo en el día a día de mis proyectos.</p>
+
+        <div class="skills-grid">
+          <div class="card">
+            <p class="skill-title">Lenguajes</p>
+            <p class="skill-list">
+              <span>Python</span>
+              <span>Java</span>
+              <span>JavaScript</span>
+              <span>C++</span>
+              <span>SQL</span>
+            </p>
+          </div>
+
+          <div class="card">
+            <p class="skill-title">Frameworks &amp; plataformas</p>
+            <p class="skill-list">
+              <span>Django</span>
+              <span>Django REST</span>
+              <span>Node.js</span>
+              <span>Celery</span>
+              <span>Pytest</span>
+            </p>
+          </div>
+
+          <div class="card">
+            <p class="skill-title">Herramientas &amp; otros</p>
+            <p class="skill-list">
+              <span>Git</span>
+              <span>Docker</span>
+              <span>Postman</span>
+              <span>PostgreSQL</span>
+              <span>Draw.io</span>
+            </p>
+          </div>
         </div>
-      </article>
+      </section>
 
-      <article class="card project-card">
-        <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=800&q=80"
-          alt="Captura de app deportiva.">
-        <h3 class="project-title">App de Gestión Deportiva</h3>
-        <p class="muted">
-          Aplicación móvil para clubes con gestión de jugadores, estadísticas y sincronización de datos en la nube.
-        </p>
-        <div class="project-tech">
-          <span class="badge">Android</span>
-          <span class="badge">Kotlin</span>
-          <span class="badge">Firebase</span>
+      <section id="contacto">
+        <h2>Contacto</h2>
+        <p class="section-subtitle">¿Te interesa mi perfil? Hablemos.</p>
+
+        <div class="card contact-list">
+          <p>
+            Correo:
+            <strong><a href="mailto:modestluis@gmail.com">modestluis@gmail.com</a></strong>
+          </p>
+          <p class="links">
+            LinkedIn:
+            <a href="https://www.linkedin.com/in/modest-luis-boquera-26a1a6256/" target="_blank" rel="noopener noreferrer">
+              Modest Luis
+            </a>
+          </p>
+          <p class="links">
+            GitHub:
+            <a href="https://github.com/twelfetitan" target="_blank" rel="noopener noreferrer">
+              twelfetitan
+            </a>
+          </p>
         </div>
-      </article>
-      
-  </div>
-  </section>
-
-  <section id="habilidades">
-    <h2>Habilidades</h2>
-    <p class="section-subtitle">Tecnologías con las que trabajo en el día a día de mis proyectos.</p>
-
-    <div class="skills-grid">
-      <div class="card">
-        <p class="skill-title">Lenguajes</p>
-        <p class="skill-list">
-          <span>Java</span>
-          <span>Kotlin</span>
-          <span>JavaScript</span>
-          <span>Python</span>
-          <span>SQL</span>
-        </p>
-      </div>
-
-      <div class="card">
-        <p class="skill-title">Frameworks & plataformas</p>
-        <p class="skill-list">
-          <span>Spring Boot</span>
-          <span>JavaFX</span>
-          <span>Node.js</span>
-          <span>Express</span>
-          <span>Firebase</span>
-        </p>
-      </div>
-
-      <div class="card">
-        <p class="skill-title">Herramientas & otros</p>
-        <p class="skill-list">
-          <span>Git</span>
-          <span>Docker</span>
-          <span>Postman</span>
-          <span>Linux</span>
-          <span>Figma</span>
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p class="section-subtitle">¿Te interesa mi perfil? Hablemos.</p>
-
-    <div class="card contact-list" style="margin-top:16px">
-      <p>
-        Correo:
-        <strong><a href="mailto:modestluis@gmail.com">modestluis@gmail.com</a></strong>
-      </p>
-      <p class="links">
-        LinkedIn:
-        <a href="https://www.linkedin.com/in/modest-luis-boquera-26a1a6256/" target="_blank" rel="noopener noreferrer">
-          Modest Luis
-        </a>
-      </p>
-      <p class="links">
-        GitHub:
-        <a href="https://github.com/twelfetitan" target="_blank" rel="noopener noreferrer">
-          twelfetitan
-        </a>
-      </p>
-    </div>
-  </section>
-  </main>
+      </section>
+    </main>
 
   <footer>
-    © 2025 — Modest Luis · Portfolio de desarrollo de aplicaciones multiplataforma
+    © 2026 — Modest Luis · Portfolio de desarrollo de aplicaciones multiplataforma
   </footer>
   </div>
 </body>
